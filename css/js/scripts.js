@@ -6,7 +6,13 @@ const countryRepository = (function() {
 
   function loadDetails(item) {}
 
-  function isObject(obj, objLength) {}
+  //Check if object is not an array and of specific length
+  function isObject(obj, objLength) {
+    return (
+      Object.prototype.toString.call(obj) === "[object Object]" &&
+      Object.keys(obj).length === objLength
+    );
+  }
 
   function add(country) {}
 
