@@ -14,7 +14,14 @@ const countryRepository = (function() {
     );
   }
 
-  function add(country) {}
+  //Add Country Object
+  function add(country) {
+    if (isObject(country, 2)) {
+      repository.push(country);
+    } else {
+      throw "Invaid Entry";
+    }
+  }
 
   function addListItem() {}
 
