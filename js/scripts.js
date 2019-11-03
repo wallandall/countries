@@ -4,6 +4,7 @@ const countryRepository = (function() {
   const $grid = $(".grid");
 
   function loadList() {
+    isLoading(true);
     return $.ajax(apiUrl, { dataType: "json" })
       .then(function(responseJSON) {
         return responseJSON;
@@ -12,8 +13,10 @@ const countryRepository = (function() {
         $.each(json, function() {
           add({ name: this.name, flag: this.flag });
         });
+        isLoading(false);
       })
       .catch(function(e) {
+        isLoading(false);
         throw e;
       });
   }
@@ -66,6 +69,14 @@ const countryRepository = (function() {
       .append($name);
   }
 
+  function isLoading(loading) {
+    if (loading) {
+      $("#overlay").fadeIn(300);
+    } else {
+      $("#overlay").fadeOut(300);
+    }
+  }
+
   return {
     add: add,
     getAll: getAll,
@@ -74,7 +85,7 @@ const countryRepository = (function() {
     loadDetails: loadDetails,
   };
 })();
-
+var $spinner = $("#spinner");
 countryRepository.loadList().then(function() {
   // Loop throu all items in list
   countryRepository.getAll().forEach(function(country) {
