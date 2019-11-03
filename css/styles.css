@@ -50,8 +50,9 @@ h3 {
   color: #000;
 }
 
-.country__title {
-    
+.country h3 {
+  text-transform: capitalize;
+  word-wrap: break-word;
 }
 
 .country__img {
