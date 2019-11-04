@@ -85,7 +85,7 @@ const countryRepository = (function() {
     loadDetails: loadDetails,
   };
 })();
-var $spinner = $("#spinner");
+
 countryRepository.loadList().then(function() {
   // Loop throu all items in list
   countryRepository.getAll().forEach(function(country) {

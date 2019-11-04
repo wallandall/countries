@@ -62,8 +62,8 @@ h3 {
 
 /*Spinner */
 #overlay {
-  background: #ffffff;
-  color: #666666;
+  background: rgba(0, 0, 0, 0.6);
+  color: firebrick;
   position: fixed;
   height: 100%;
   width: 100%;
