@@ -23,14 +23,12 @@ h3 {
 }
 
 /* Grid fallback*/
-
 .grid__item {
   display: inline-block;
   width: 20%;
 }
 
 /* Styling CSS grid*/
-
 .grid {
   display: grid;
   margin: 20px;
@@ -42,7 +40,6 @@ h3 {
   background-color: grey;
   text-align: center;
   padding: 10px;
-  /* Set width to auto*/
   width: auto;
   border-radius: 5px;
   background-color: #f5f5f5;
@@ -76,6 +73,79 @@ h3 {
   opacity: 0.8;
 }
 
+/*Coubntry Dialog*/
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: grid;
+  text-align: center;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  overflow: auto;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 4px 3px 19px 0px rgba(0, 0, 0, 0.3);
+  background-color: rgb(235, 232, 232);
+  width: 100%;
+  max-width: 400px;
+  color: black;
+}
+.modal__text {
+  width: 80%;
+  float: left;
+  padding: 10px;
+  text-align: left;
+  clear: none;
+}
+.modal__text-top {
+  width: 60%;
+  text-align: left;
+  float: left;
+  clear: none;
+}
+.modal__img {
+  width: 40%;
+  float: left;
+  clear: none;
+}
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background-color: darkgray;
+  color: black;
+}
+
+.modal-close:hover {
+  text-decoration: underline;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.modal h3 {
+  text-transform: capitalize;
+  word-wrap: break-word;
+}
+
+.modal p {
+  margin-bottom: 0;
+}
+
 .spinner {
   margin: 0 auto;
   height: 64px;
@@ -85,6 +155,7 @@ h3 {
   border-right-color: transparent;
   border-radius: 50%;
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -100,10 +171,45 @@ h3 {
   .grid {
     grid-template-columns: 1fr;
   }
+  .modal__text {
+    width: 80%;
+    text-align: left;
+  }
+  .modal__text-top {
+    width: 80%;
+    padding: 10px;
+    text-align: left;
+  }
+  .modal__img {
+    margin-left: 20px;
+    width: 80%;
+    float: left;
+    clear: none;
+  }
 }
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .modal__text {
+    width: 80%;
+    float: left;
+    padding: 10px;
+    text-align: left;
+    clear: none;
+  }
+
+  .modal__text-top {
+    width: 80%;
+    float: left;
+    padding: 10px;
+    text-align: left;
+    clear: none;
+  }
+  .modal__img {
+    width: 80%;
+    float: left;
+    clear: none;
   }
 }
 @media all and (max-width: 750px) {
